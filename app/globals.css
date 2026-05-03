@@ -6,15 +6,15 @@
 ───────────────────────────────────────── */
 @theme {
   /* Light mode defaults */
-  --color-bg-primary: #f8fafc;
-  --color-bg-secondary: #f1f5f9;
-  --color-border-default: #334155;
-  --color-border-muted: #94a3b8;
-  --color-border-footer: #cbd5e1;
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #1e293b;
-  --color-text-muted: #64748b;
-  --color-tag-border: #334155;
+  --color-bg-primary: #fdfbf7;
+  --color-bg-secondary: #f4f1ea;
+  --color-border-default: #d5c8b5;
+  --color-border-muted: #e2dcd0;
+  --color-border-footer: #d5c8b5;
+  --color-text-primary: #2c2825;
+  --color-text-secondary: #4a4540;
+  --color-text-muted: #7a7268;
+  --color-tag-border: #d5c8b5;
 
   /* Typography */
   --font-family-sans: var(--font-noto-sans-kr), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
