@@ -24,7 +24,7 @@ body {
   min-height: 100vh;
   color: var(--text-secondary);
   background: var(--bg-primary);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-noto-sans-kr), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

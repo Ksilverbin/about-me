@@ -1,6 +1,21 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { Inter, Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const notoSansKR = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-noto-sans-kr',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "김은빈 | Frontend Developer",
@@ -28,7 +43,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={`${inter.variable} ${notoSansKR.variable}`}>
       <body>{children}</body>
     </html>
   );
