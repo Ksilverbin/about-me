@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import styles from "./TimelineCard.module.css";
 
 interface TimelineCardProps {
   heading: ReactNode;
@@ -14,12 +15,12 @@ export function TimelineCard({
   children
 }: TimelineCardProps) {
   return (
-    <article className="timeline-card">
-      <div className="timeline-header">
-        <h3>{heading}</h3>
-        <span className="timeline-meta">{meta}</span>
+    <article className={styles.card}>
+      <div className={styles.header}>
+        <h3 className={styles.heading}>{heading}</h3>
+        <span className={styles.meta}>{meta}</span>
       </div>
-      {body ? <p className="timeline-body">{body}</p> : null}
+      {body ? <p className={styles.body}>{body}</p> : null}
       {children}
     </article>
   );

@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-tag-border);
+  border-radius: 0.25rem;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.333;
+  font-weight: 500;
+}

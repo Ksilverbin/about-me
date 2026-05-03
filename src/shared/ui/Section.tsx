@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import styles from "./Section.module.css";
 
 interface SectionProps {
   title?: string;
@@ -7,8 +8,8 @@ interface SectionProps {
 
 export function Section({ title, children }: SectionProps) {
   return (
-    <section className="section">
-      {title ? <h2 className="section-title">{title}</h2> : null}
+    <section className={styles.section}>
+      {title ? <h2 className={styles.title}>{title}</h2> : null}
       {children}
     </section>
   );

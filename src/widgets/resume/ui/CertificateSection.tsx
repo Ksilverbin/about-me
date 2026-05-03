@@ -1,19 +1,20 @@
 import { getResume } from "@/entities/resume/model/getResume";
 import { Section } from "@/shared/ui/Section";
+import styles from "./CertificateSection.module.css";
+import { TimelineCard } from "@/shared/ui/TimelineCard";
 
 const resume = getResume();
 
 export function CertificateSection() {
   return (
     <Section title="Certificate">
-      <div className="tag-row certificate-row">
+      <div className={styles.row}>
         {resume.certificates.map((certificate) => (
-          <article className="certificate-card" key={certificate.id}>
-            <strong>{certificate.name}</strong>
-            <span className="timeline-meta">
-              ({certificate.date} {certificate.organization})
-            </span>
-          </article>
+          <TimelineCard
+            key={certificate.id}
+            heading={<strong>{certificate.name}</strong>}
+            meta={`(${certificate.date} ${certificate.organization})`}
+          />
         ))}
       </div>
     </Section>
