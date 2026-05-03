@@ -1,3 +1,5 @@
+import 'server-only';
+
 import certificatesJson from "./certificates.json";
 import educationsJson from "./educations.json";
 import experiencesJson from "./experiences.json";
