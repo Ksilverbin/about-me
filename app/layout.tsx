@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Inter, Noto_Sans_KR } from 'next/font/google';
+import { ThemeToggle } from '@/shared/ui/ThemeToggle';
 import './globals.css';
 
 const inter = Inter({
@@ -16,6 +17,16 @@ const notoSansKR = Noto_Sans_KR({
   variable: '--font-noto-sans-kr',
   display: 'swap',
 });
+
+// 페이지 첫 로드 시 저장된 테마를 즉시 적용 (FOUC 방지)
+// React 렌더보다 먼저 실행되어 화면 깜빡임 없음
+const themeScript = `
+(function() {
+  var saved = localStorage.getItem('theme');
+  var theme = saved === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+`;
 
 export const metadata: Metadata = {
   title: "김은빈 | Frontend Developer",
@@ -43,8 +54,19 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${inter.variable} ${notoSansKR.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="ko"
+      className={`${inter.variable} ${notoSansKR.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* FOUC 방지: React 하이드레이션 전에 동기적으로 실행 */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        <ThemeToggle />
+        {children}
+      </body>
     </html>
   );
 }
