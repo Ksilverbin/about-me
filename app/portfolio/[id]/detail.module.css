@@ -123,6 +123,11 @@
   color: var(--color-text-secondary);
 }
 
+.emoji {
+  margin-left: 0.25rem;
+  font-size: 1.25rem;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;

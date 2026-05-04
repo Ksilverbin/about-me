@@ -53,14 +53,23 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </header>
 
         <article className={styles.content}>
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Overview</h2>
-            <p className={styles.body}>{project.description}</p>
-          </section>
+          {project.background && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>프로젝트 배경 <span className={styles.emoji}>📌</span></h2>
+              <p className={styles.body}>{project.background}</p>
+            </section>
+          )}
+
+          {project.problem && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>무엇이 문제였나 <span className={styles.emoji}>🤔</span></h2>
+              <p className={styles.body}>{project.problem}</p>
+            </section>
+          )}
 
           {project.introduce.length > 0 && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Details & Contributions</h2>
+              <h2 className={styles.sectionTitle}>어떻게 해결했나 <span className={styles.emoji}>⚙️</span></h2>
               <div className={styles.detailsList}>
                 {project.introduce.map((item) => (
                   <div key={item.id} className={styles.detailItem}>
@@ -69,6 +78,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   </div>
                 ))}
               </div>
+            </section>
+          )}
+
+          {project.retrospective && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>회고 및 성과 <span className={styles.emoji}>✨</span></h2>
+              <p className={styles.body}>{project.retrospective}</p>
             </section>
           )}
         </article>

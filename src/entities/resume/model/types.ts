@@ -31,6 +31,9 @@ export interface Project {
   period: string;
   description: string;
   tags: string[];
+  background?: string;
+  problem?: string;
+  retrospective?: string;
   introduce: ProjectHighlight[];
 }
 
