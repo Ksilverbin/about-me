@@ -31,6 +31,7 @@ export interface Project {
   period: string;
   description: string;
   tags: string[];
+  image?: string;
   background?: string;
   problem?: string;
   retrospective?: string;

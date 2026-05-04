@@ -75,6 +75,23 @@
   font-weight: 500;
 }
 
+.imageWrapper {
+  margin: 0 0 4rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--color-border-muted); /* 이미지가 없을 때나 로딩 중일 때 표시될 스켈레톤/플레이스홀더 색상 */
+  aspect-ratio: 16 / 9;
+  position: relative;
+  border: 1px solid var(--color-border-muted);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -121,11 +138,6 @@
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
-}
-
-.emoji {
-  margin-left: 0.25rem;
-  font-size: 1.25rem;
 }
 
 @media (max-width: 768px) {

@@ -1,4 +1,5 @@
 import { getResume } from "@/entities/resume/model/getResume";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./detail.module.css";
@@ -52,24 +53,37 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         </header>
 
+        {project.image && (
+          <figure className={styles.imageWrapper}>
+            <Image
+              src={project.image}
+              alt={`${project.title} 썸네일`}
+              width={1200}
+              height={675}
+              className={styles.image}
+              priority
+            />
+          </figure>
+        )}
+
         <article className={styles.content}>
           {project.background && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>프로젝트 배경 <span className={styles.emoji}>📌</span></h2>
+              <h2 className={styles.sectionTitle}>프로젝트 배경</h2>
               <p className={styles.body}>{project.background}</p>
             </section>
           )}
 
           {project.problem && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>무엇이 문제였나 <span className={styles.emoji}>🤔</span></h2>
+              <h2 className={styles.sectionTitle}>무엇이 문제였나</h2>
               <p className={styles.body}>{project.problem}</p>
             </section>
           )}
 
           {project.introduce.length > 0 && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>어떻게 해결했나 <span className={styles.emoji}>⚙️</span></h2>
+              <h2 className={styles.sectionTitle}>어떻게 해결했나</h2>
               <div className={styles.detailsList}>
                 {project.introduce.map((item) => (
                   <div key={item.id} className={styles.detailItem}>
@@ -83,7 +97,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
           {project.retrospective && (
             <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>회고 및 성과 <span className={styles.emoji}>✨</span></h2>
+              <h2 className={styles.sectionTitle}>회고 및 성과</h2>
               <p className={styles.body}>{project.retrospective}</p>
             </section>
           )}
