@@ -63,7 +63,23 @@
         "solution": "DID 기반의 자체 서명 프로세스를 새롭게 설계 및 문서화하고, 예외 케이스(네트워크 지연, 백그라운드 전환 등)를 완벽히 방어하는 재시도 로직을 구현하여 서명 이탈률을 획기적으로 낮췄습니다."
       }
     ],
-    "introduce": []
+    "introduce": [
+      {
+        "id": 1,
+        "subTitle": "WebView 성능 최적화 및 크로스 플랫폼 대응",
+        "description": "무거운 미디어 및 리스트 로딩 시 발생하는 메모리 부족 현상을 방지하기 위해 Intersection Observer를 도입하여 초기 로딩 성능을 최적화함."
+      },
+      {
+        "id": 2,
+        "subTitle": "심리스한 웹-네이티브 인터랙션 환경 구축",
+        "description": "유니버설 링크(Universal Link)와 WalletConnect를 결합하여 사용자 이탈 없이 웹뷰와 네이티브 지갑 간의 서명 및 트랜잭션 요청을 안정적으로 연결하는 인터랙션 아키텍처를 설계함."
+      },
+      {
+        "id": 3,
+        "subTitle": "Web3 도메인 기능 고도화",
+        "description": "복잡한 Web3 특성을 사용자 친화적으로 풀기 위해 DID 기반의 신규 서명 프로세스를 문서화하고, DAO 개설 및 투표 기능을 안정적으로 구현함."
+      }
+    ]
   },
   {
     "id": 3,
@@ -96,7 +112,23 @@
         "solution": "프론트엔드 서버의 부하를 줄이기 위해 Azure Function을 활용한 Serverless 이미지 업로드 API(Azure Blob Storage 연동)를 직접 구현하여 트래픽 분산을 유도하고 시스템 안정성을 높였습니다."
       }
     ],
-    "introduce": []
+    "introduce": [
+      {
+        "id": 1,
+        "subTitle": "확장 가능한 컴포넌트 아키텍처 설계",
+        "description": "파편화된 UI 컴포넌트로 인한 유지보수 어려움을 해결하고자 Atomic Design Pattern과 Storybook을 선제적으로 도입하여 UI 일관성을 확보함."
+      },
+      {
+        "id": 2,
+        "subTitle": "대규모 온체인 데이터 렌더링 최적화",
+        "description": "수많은 NFT 자산 렌더링 시 발생하는 브라우저 프리징을 방지하기 위해 useInfiniteQuery 기반의 인피니티 스크롤을 구현함."
+      },
+      {
+        "id": 3,
+        "subTitle": "Serverless 기반 미디어 파이프라인 구축",
+        "description": "프론트엔드 서버의 부하를 줄이기 위해 Azure Function을 활용한 Serverless 이미지 업로드 API를 구축함."
+      }
+    ]
   },
   {
     "id": 4,
@@ -141,6 +173,22 @@
         "solution": "미디어 쿼리와 유연한 레이아웃을 적용하여 모바일 기기를 완벽하게 지원하는 반응형 웹으로 전환했습니다. 또한 라이브 운영 중 발생하는 버그나 업데이트 이슈를 신속하게 트래킹하고 해결하여 서비스 안정성을 확보했습니다."
       }
     ],
-    "introduce": []
+    "introduce": [
+      {
+        "id": 1,
+        "subTitle": "SPA에서 SSR로의 아키텍처 마이그레이션",
+        "description": "기존 Vue2 SPA를 Nuxt.js 기반의 SSR 프레임워크로 전면 이관하여 초기 렌더링 속도와 글로벌 검색 엔진 노출(SEO)을 대폭 개선함."
+      },
+      {
+        "id": 2,
+        "subTitle": "컴포넌트 라이프사이클 최적화",
+        "description": "Vue Composition API를 도입하여 복잡하게 얽혀 있던 상태 관리 로직과 훅을 관심사별로 분리하고 재사용성을 높임."
+      },
+      {
+        "id": 3,
+        "subTitle": "모바일 반응형 전환",
+        "description": "데스크톱 위주의 UI를 미디어 쿼리와 유연한 레이아웃을 통해 반응형으로 전환하여 모바일 유저의 사용성을 향상시킴."
+      }
+    ]
   }
 ]
