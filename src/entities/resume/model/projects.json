@@ -4,28 +4,38 @@
     "title": "블록체인 데이터 관리 어드민 개편",
     "company": "빗썸",
     "period": "2025. 04. - Present",
-    "description": "레거시 코드 분석을 통한 100페이지 규모의 어드민 시스템 단독 개편",
-    "tags": ["TypeScript", "Next.js", "SpringBoot", "Java"],
+    "description": "백엔드 중심의 100페이지 규모 레거시 어드민을 Next.js 기반 현대적 웹 아키텍처로 전면 개편. 단독 담당자로서 기존 시스템의 구조적 한계를 개선하고, 확장 가능한 안정적 시스템을 구축했습니다.",
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "Ant Design",
+      "Docker"
+    ],
     "introduce": [
       {
         "id": 1,
-        "subTitle": "UI/UX 개선",
-        "description": "Ant Design 도입 및 디자인 토큰 관리를 통한 라이트/다크 테마 지원"
+        "subTitle": "아키텍처 개편 및 유지보수성 향상",
+        "description": "비즈니스 로직과 UI 컴포넌트가 강하게 결합된 기존 레거시의 한계를 극복하기 위해 FSD(Feature-Sliced Design) 아키텍처를 도입하여 도메인 간 의존성을 분리하고 컴포넌트 재사용성을 극대화함."
       },
       {
         "id": 2,
-        "subTitle": "개발 생산성 향상",
-        "description": "FSD 아키텍처 도입으로 복잡한 의존성 해결 및 재사용성 극대화\n검색 폼과 URL 상태 동기화를 위한 Zod 기반 런타임 타입 검사 훅 도입으로 데이터 정합성 보장 및 런타임 에러 사전 방지"
+        "subTitle": "런타임 안정성 및 데이터 정합성 보장",
+        "description": "복잡한 조건의 검색 폼과 URL 쿼리 파라미터 상태 동기화 과정에서 발생하는 에러를 방지하기 위해, Zod를 활용한 런타임 타입 검증 훅을 구축하여 API 통신 전 데이터 정합성을 보장하고 런타임 장애를 사전에 차단함."
       },
       {
         "id": 3,
-        "subTitle": "보안 강화",
-        "description": "proxy(middleware)를 통한 CORS 해결 및 API 엔드포인트 숨김 처리"
+        "subTitle": "보안 아키텍처 구축",
+        "description": "Next.js Middleware를 활용한 Proxy를 구축하여 클라이언트 측의 CORS 이슈를 깔끔하게 해결하고, 내부 API 엔드포인트를 브라우저로부터 은닉하여 보안 위협을 원천 차단함."
       },
       {
         "id": 4,
-        "subTitle": "배포 최적화",
-        "description": "output: standalone 적용 및 Docker 멀티 스테이지 빌드를 적용으로 배포 시간 50% (10분 → 5분) 단축"
+        "subTitle": "CI/CD 배포 파이프라인 최적화",
+        "description": "Next.js의 'output: standalone' 모드 적용 및 Docker Multi-stage 빌드를 도입하여 불필요한 노드 모듈 의존성을 제거. 결과적으로 이미지 크기를 최적화하고 전체 배포 시간을 기존 10분에서 5분으로 50% 단축함."
+      },
+      {
+        "id": 5,
+        "subTitle": "디자인 시스템 도입 및 UI/UX 표준화",
+        "description": "Ant Design을 기반으로 사내 디자인 토큰을 체계적으로 구조화하여 100페이지 전역에 일관된 UI 규칙을 수립하고, 사용자 피로도를 낮추는 다크 모드 테마를 완벽하게 지원함."
       }
     ]
   },
@@ -34,28 +44,32 @@
     "title": "블록체인 기반 인앱 서비스 Wepublic 런칭",
     "company": "위메이드",
     "period": "2023. 08. - 2025. 03.",
-    "description": "블록체인 기반 투명 공동체 운영 앱 내 웹뷰 서비스 개발",
-    "tags": ["TypeScript", "Next.js", "NestJS"],
+    "description": "블록체인 기반 투명 공동체(DAO) 운영 앱 내 WebView 프론트엔드 서비스 런칭. 네이티브 앱 수준의 매끄러운 사용자 경험을 제공하기 위한 웹/앱 간 인터랙션 설계 및 렌더링 최적화를 주도했습니다.",
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "NestJS"
+    ],
     "introduce": [
       {
         "id": 1,
-        "subTitle": "WebView 최적화",
-        "description": "Intersection Observer를 활용하여 뷰포트 내 콘텐츠 우선 로드 구현\niOS/Android 기기별 특성에 따른 비즈니스 로직 분기 및 UI 대응"
+        "subTitle": "WebView 성능 최적화 및 크로스 플랫폼 대응",
+        "description": "무거운 미디어 및 리스트 로딩 시 발생하는 메모리 부족 현상을 방지하기 위해 Intersection Observer를 도입하여 초기 로딩 성능을 최적화함. 또한 iOS/Android 기기별 렌더링 특성과 제약 사항을 분석하여 맞춤형 UI 및 비즈니스 로직 분기를 적용함."
       },
       {
         "id": 2,
-        "subTitle": "웹앱 환경 구축",
-        "description": "유니버설 링크 및 WalletConnect를 통한 웹-네이티브 간 인터랙션 설계"
+        "subTitle": "심리스한 웹-네이티브 인터랙션 환경 구축",
+        "description": "유니버설 링크(Universal Link)와 WalletConnect를 결합하여 사용자 이탈 없이 웹뷰와 네이티브 지갑 간의 서명 및 트랜잭션 요청을 안정적으로 연결하는 인터랙션 아키텍처를 설계함."
       },
       {
         "id": 3,
-        "subTitle": "서비스 기능 개발",
-        "description": "DID 기반의 신규 서명 프로세스 구축 및 문서화\nDAO, 프로젝트 개설, 투표 등 Web3 연동 기능 개발"
+        "subTitle": "Web3 도메인 기능 고도화",
+        "description": "복잡한 Web3 특성을 사용자 친화적으로 풀기 위해 DID 기반의 신규 서명 프로세스를 문서화하고, DAO 개설 및 투표 기능을 안정적으로 구현하여 서비스 런칭에 기여함."
       },
       {
         "id": 4,
-        "subTitle": "업무 효율성 개선",
-        "description": "컨텐츠 관리 어드민 기획 및 개발"
+        "subTitle": "백오피스 자동화를 통한 업무 효율성 증대",
+        "description": "운영팀의 수동 작업을 최소화하기 위해 콘텐츠 관리 어드민 시스템을 기획부터 개발까지 주도하여 내부 업무 효율성을 대폭 개선함."
       }
     ]
   },
@@ -64,23 +78,28 @@
     "title": "블록체인 기반 서비스 NILE 런칭",
     "company": "위메이드",
     "period": "2022. 09. - 2025. 08.",
-    "description": "NFT 거래 및 DAO 운영을 위한 Web3 기반 웹 서비스 프론트엔드 개발",
-    "tags": ["TypeScript", "Next.js", "NestJS", "Docker"],
+    "description": "NFT 거래 및 DAO 생태계를 위한 Web3 글로벌 플랫폼 프론트엔드 개발. 대규모 온체인 데이터의 실시간 시각화와 복잡한 UI 상태 관리를 안정적으로 처리하며 글로벌 서비스 런칭을 완수했습니다.",
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "NestJS",
+      "Docker"
+    ],
     "introduce": [
       {
         "id": 1,
-        "subTitle": "디자인 시스템",
-        "description": "Atomic Design Pattern과 Storybook을 도입하여 UI 일관성 확보 및 협업 커뮤니케이션 비용 감소"
+        "subTitle": "확장 가능한 컴포넌트 아키텍처 설계",
+        "description": "파편화된 UI 컴포넌트로 인한 유지보수 어려움을 해결하고자 Atomic Design Pattern과 Storybook을 선제적으로 도입. 디자인 시스템을 구축하여 팀 내 UI 일관성을 확보하고 디자이너와의 커뮤니케이션 비용을 크게 절감함."
       },
       {
         "id": 2,
-        "subTitle": "데이터 처리",
-        "description": "useInfiniteQuery를 활용한 인피니티 스크롤 구현으로 대규모 온체인 데이터 로딩 성능 최적화\namchart를 통한 수집된 온체인 데이터 시각화"
+        "subTitle": "대규모 온체인 데이터 렌더링 최적화",
+        "description": "수많은 NFT 자산과 트랜잭션 데이터를 한 번에 렌더링할 때 발생하는 브라우저 프리징을 방지하기 위해 useInfiniteQuery 기반의 인피니티 스크롤을 구현하여 성능을 개선함. amCharts를 활용해 복잡한 데이터를 직관적으로 시각화함."
       },
       {
         "id": 3,
-        "subTitle": "개발 생산성 향상",
-        "description": "Azure Function을 통한 Azure Blob Storage 이미지 업로드 자동화 API 구현\nAzure Pipeline을 통한 배포 파이프라인 구축"
+        "subTitle": "Serverless 기반 미디어 파이프라인 구축",
+        "description": "프론트엔드 서버의 부하를 줄이기 위해 Azure Function을 활용한 Serverless 이미지 업로드 API(Azure Blob Storage 연동)를 직접 구현하고, Azure Pipeline으로 CI/CD 환경을 구축해 개발 생산성을 향상시킴."
       }
     ]
   }
