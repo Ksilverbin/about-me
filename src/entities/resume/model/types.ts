@@ -26,6 +26,7 @@ export interface ProjectHighlight {
 
 export interface Project {
   id: number;
+  slug: string;
   title: string;
   company: string;
   period: string;

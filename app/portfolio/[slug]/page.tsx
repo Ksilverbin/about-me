@@ -8,22 +8,22 @@ import styles from "./detail.module.css";
 export function generateStaticParams() {
   const resume = getResume();
   return resume.projects.map((project) => ({
-    id: project.id.toString(),
+    slug: project.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const resume = getResume();
-  const project = resume.projects.find((p) => p.id.toString() === resolvedParams.id);
+  const project = resume.projects.find((p) => p.slug === resolvedParams.slug);
   if (!project) return { title: "프로젝트 찾을 수 없음" };
   return { title: `${project.title} | 프로젝트` };
 }
 
-export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const resume = getResume();
-  const project = resume.projects.find((p) => p.id.toString() === resolvedParams.id);
+  const project = resume.projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();

@@ -27,7 +27,7 @@ export default function PortfolioPage() {
           {resume.projects.map((project) => (
             <Link
               key={project.id}
-              href={`/portfolio/${project.id}`}
+              href={`/portfolio/${project.slug}`}
               className={styles.cardLink}
             >
               <article className={styles.card}>

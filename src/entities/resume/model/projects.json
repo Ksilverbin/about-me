@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "bithumb-admin",
     "title": "블록체인 데이터 관리 어드민 개편",
     "company": "빗썸",
     "period": "2025. 04. - Present",
@@ -39,6 +40,7 @@
   },
   {
     "id": 2,
+    "slug": "wepublic",
     "title": "블록체인 기반 인앱 서비스 Wepublic 런칭",
     "company": "위메이드",
     "image": "/project/wepublic-home.webp",
@@ -73,6 +75,7 @@
   },
   {
     "id": 3,
+    "slug": "nile",
     "title": "블록체인 기반 서비스 NILE 런칭",
     "company": "위메이드",
     "image": "/project/nile-home.webp",
