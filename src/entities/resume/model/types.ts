@@ -24,6 +24,18 @@ export interface ProjectHighlight {
   description: string;
 }
 
+export interface Contribution {
+  id: number;
+  title: string;
+  problem: string;
+  solution: string;
+}
+
+export interface TechDetail {
+  name: string;
+  description: string;
+}
+
 export interface Project {
   id: number;
   slug: string;
@@ -33,10 +45,18 @@ export interface Project {
   description: string;
   tags: string[];
   image?: string;
+  
+  // V1 Fields
   background?: string;
   problem?: string;
   retrospective?: string;
   introduce: ProjectHighlight[];
+
+  // V2 Fields (New Structure)
+  overview?: string;
+  architecture?: string;
+  contributions?: Contribution[];
+  techDetails?: TechDetail[];
 }
 
 export interface Education {

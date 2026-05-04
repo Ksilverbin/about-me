@@ -67,21 +67,84 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         )}
 
         <article className={styles.content}>
-          {project.background && (
+          {/* V2 Structure */}
+          {project.overview && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>프로젝트 소개</h2>
+              <p className={styles.body}>{project.overview}</p>
+            </section>
+          )}
+
+          {project.contributions && project.contributions.length > 0 && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>내가 기여한 부분</h2>
+              <div className={styles.detailsList}>
+                {project.contributions.map((item) => (
+                  <div key={item.id} className={styles.detailItem}>
+                    <h3 className={styles.detailSubtitle}>{item.title}</h3>
+                    <div className={styles.psBlock}>
+                      <div className={styles.problemBlock}>
+                        <strong className={styles.psLabel}>문제 상황</strong>
+                        <p className={styles.detailDesc}>{item.problem}</p>
+                      </div>
+                      <div className={styles.solutionBlock}>
+                        <strong className={styles.psLabel}>해결 방안</strong>
+                        <p className={styles.detailDesc}>{item.solution}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {project.architecture && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>구성 및 아키텍처 설계</h2>
+              <p className={styles.body}>{project.architecture}</p>
+            </section>
+          )}
+
+          {project.overview && project.techDetails && project.techDetails.length > 0 && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>사용 기술</h2>
+              <ul className={styles.techList}>
+                {project.techDetails.map((tech) => (
+                  <li key={tech.name} className={styles.techItem}>
+                    <strong>{tech.name}</strong>: {tech.description}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {project.overview && (!project.techDetails || project.techDetails.length === 0) && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>사용 기술</h2>
+              <div className={styles.tags}>
+                {project.tags.map((tag) => (
+                  <span key={tag} className={styles.tag}>{tag}</span>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* V1 Structure Fallbacks */}
+          {!project.overview && project.background && (
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>프로젝트 배경</h2>
               <p className={styles.body}>{project.background}</p>
             </section>
           )}
 
-          {project.problem && (
+          {!project.overview && project.problem && (
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>무엇이 문제였나</h2>
               <p className={styles.body}>{project.problem}</p>
             </section>
           )}
 
-          {project.introduce.length > 0 && (
+          {!project.overview && project.introduce && project.introduce.length > 0 && (
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>어떻게 해결했나</h2>
               <div className={styles.detailsList}>
@@ -95,7 +158,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </section>
           )}
 
-          {project.retrospective && (
+          {!project.overview && project.retrospective && (
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>회고 및 성과</h2>
               <p className={styles.body}>{project.retrospective}</p>

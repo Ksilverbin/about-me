@@ -57,12 +57,14 @@
 .cardLink {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  height: 100%;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding: 1.5rem;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border-default);
@@ -110,6 +112,11 @@
   color: var(--color-text-secondary);
   line-height: 1.6;
   font-size: 0.9375rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tags {

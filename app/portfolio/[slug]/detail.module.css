@@ -140,6 +140,66 @@
   color: var(--color-text-secondary);
 }
 
+.psBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: var(--color-bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--color-border-muted);
+}
+
+.problemBlock, .solutionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.psLabel {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+}
+
+.psLabel::before {
+  content: "•";
+  color: var(--color-text-muted);
+  margin-right: 0.5rem;
+}
+
+.techList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.techItem {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.techItem::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+}
+
+.techItem strong {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
