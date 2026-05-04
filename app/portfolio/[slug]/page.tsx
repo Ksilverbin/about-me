@@ -82,6 +82,22 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 {project.contributions.map((item) => (
                   <div key={item.id} className={styles.detailItem}>
                     <h3 className={styles.detailSubtitle}>{item.title}</h3>
+                    {item.images?.length > 0 && (
+                      <div className={styles.imagesGrid}>
+                        {item.images.map((image, index: number) => (
+                          <figure key={index} className={styles.gridImageWrapper}>
+                            <Image
+                              key={image.id}
+                              src={image.src}
+                              alt={`${item.title} 기여한 부분 이미지 ${index + 1}`}
+                              width={image.width}
+                              height={image.height}
+                              className={styles.image}
+                            />
+                          </figure>
+                        ))}
+                      </div>
+                    )}
                     <div className={styles.psBlock}>
                       <div className={styles.problemBlock}>
                         <strong className={styles.psLabel}>문제 상황</strong>
