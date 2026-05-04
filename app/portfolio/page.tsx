@@ -25,21 +25,27 @@ export default function PortfolioPage() {
 
         <div className={styles.grid}>
           {resume.projects.map((project) => (
-            <article key={project.id} className={styles.card}>
-              <div className={styles.cardHeader}>
-                <h2>{project.title}</h2>
-                <span className={styles.period}>{project.period}</span>
-              </div>
-              <p className={styles.company}>{project.company}</p>
-              <p className={styles.body}>{project.description}</p>
-              <div className={styles.tags}>
-                {project.tags.map((tag) => (
-                  <span key={tag} className={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </article>
+            <Link
+              key={project.id}
+              href={`/portfolio/${project.id}`}
+              className={styles.cardLink}
+            >
+              <article className={styles.card}>
+                <div className={styles.cardHeader}>
+                  <h2>{project.title}</h2>
+                  <span className={styles.period}>{project.period}</span>
+                </div>
+                <p className={styles.company}>{project.company}</p>
+                <p className={styles.body}>{project.description}</p>
+                <div className={styles.tags}>
+                  {project.tags.map((tag) => (
+                    <span key={tag} className={styles.tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
