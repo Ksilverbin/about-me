@@ -24,11 +24,11 @@ export function ProjectsSection() {
           >
             <TagList items={project.tags} />
             <ul className={styles.points}>
-              {project.introduce.map((item) => (
+              {project.contributions?.map((item) => (
                 <li key={item.id}>
                   <div className={styles.point}>
-                    <strong>{item.subTitle}</strong>
-                    <span>: {item.description}</span>
+                    <strong>{item.title}</strong>
+                    <span>: {item.solution}</span>
                   </div>
                 </li>
               ))}

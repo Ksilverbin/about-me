@@ -18,15 +18,18 @@ export interface Experience {
   introduce: string[];
 }
 
-export interface ProjectHighlight {
+
+export interface Image {
   id: number;
-  subTitle: string;
-  description: string;
+  src: string;
+  width: number;
+  height: number;
 }
 
 export interface Contribution {
   id: number;
   title: string;
+  images: Image[];
   problem: string;
   solution: string;
 }
@@ -45,14 +48,6 @@ export interface Project {
   description: string;
   tags: string[];
   image?: string;
-  
-  // V1 Fields
-  background?: string;
-  problem?: string;
-  retrospective?: string;
-  introduce: ProjectHighlight[];
-
-  // V2 Fields (New Structure)
   overview?: string;
   architecture?: string;
   contributions?: Contribution[];

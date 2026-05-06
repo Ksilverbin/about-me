@@ -85,7 +85,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     {item.images?.length > 0 && (
                       <div className={styles.imagesGrid}>
                         {item.images.map((image, index: number) => (
-                          <figure key={index} className={styles.gridImageWrapper}>
+                          <figure key={index} className={styles.gridImageWrapper} style={{
+                            aspectRatio: image.width / image.height
+                          }}>
                             <Image
                               key={image.id}
                               src={image.src}
@@ -145,41 +147,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </section>
           )}
 
-          {/* V1 Structure Fallbacks */}
-          {!project.overview && project.background && (
-            <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>프로젝트 배경</h2>
-              <p className={styles.body}>{project.background}</p>
-            </section>
-          )}
 
-          {!project.overview && project.problem && (
-            <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>무엇이 문제였나</h2>
-              <p className={styles.body}>{project.problem}</p>
-            </section>
-          )}
-
-          {!project.overview && project.introduce && project.introduce.length > 0 && (
-            <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>어떻게 해결했나</h2>
-              <div className={styles.detailsList}>
-                {project.introduce.map((item) => (
-                  <div key={item.id} className={styles.detailItem}>
-                    <h3 className={styles.detailSubtitle}>{item.subTitle}</h3>
-                    <p className={styles.detailDesc}>{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {!project.overview && project.retrospective && (
-            <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>회고 및 성과</h2>
-              <p className={styles.body}>{project.retrospective}</p>
-            </section>
-          )}
         </article>
       </div>
     </main>
