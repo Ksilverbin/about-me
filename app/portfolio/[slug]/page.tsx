@@ -116,12 +116,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </section>
           )}
 
-          {project.architecture && (
-            <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>구성 및 아키텍처 설계</h2>
-              <p className={styles.body}>{project.architecture}</p>
-            </section>
-          )}
+
 
           {project.overview && project.techDetails && project.techDetails.length > 0 && (
             <section className={styles.section}>

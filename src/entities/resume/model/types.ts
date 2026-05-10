@@ -49,7 +49,6 @@ export interface Project {
   tags: string[];
   image?: string;
   overview?: string;
-  architecture?: string;
   contributions?: Contribution[];
   techDetails?: TechDetail[];
 }
