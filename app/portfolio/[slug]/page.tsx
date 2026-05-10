@@ -2,6 +2,7 @@ import { getResume } from "@/entities/resume/model/getResume";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BackButton } from "@/shared/ui/BackButton";
 import styles from "./detail.module.css";
 
 // 빌드 시 정적 페이지 생성을 위한 params 제공
@@ -33,9 +34,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     <main className={styles.shell}>
       <div className={styles.wrap}>
         <nav className={styles.nav}>
-          <Link href="/portfolio" className={styles.backLink}>
-            ← 프로젝트 목록으로
-          </Link>
+          <BackButton className={styles.backLink}>
+            ← 돌아가기
+          </BackButton>
         </nav>
 
         <header className={styles.header}>

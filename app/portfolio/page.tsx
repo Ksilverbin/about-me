@@ -15,7 +15,7 @@ export default function PortfolioPage() {
       <div className={styles.wrap}>
         <header className={styles.header}>
           <Link href="/" className={styles.backLink}>
-            ← 돌아가기
+            About Me
           </Link>
           <h1 className={styles.title}>프로젝트</h1>
           <p className={styles.description}>

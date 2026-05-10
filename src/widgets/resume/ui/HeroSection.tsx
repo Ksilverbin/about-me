@@ -1,8 +1,7 @@
-import { getResume } from "@/entities/resume/model/getResume";
-import { BulletList } from "@/shared/ui/BulletList";
-import { Section } from "@/shared/ui/Section";
-import Link from "next/link";
-import styles from "./HeroSection.module.css";
+import { getResume } from '@/entities/resume/model/getResume';
+import { BulletList } from '@/shared/ui/BulletList';
+import { Section } from '@/shared/ui/Section';
+import styles from './HeroSection.module.css';
 
 const resume = getResume();
 
@@ -23,7 +22,6 @@ export function HeroSection() {
           >
             GitHub
           </a>
-          <Link href="/portfolio">Portfolio</Link>
         </div>
       </div>
       <div className={styles.headlineBox}>{resume.headline}</div>

@@ -2,6 +2,7 @@ import { getResume } from "@/entities/resume/model/getResume";
 import { Section } from "@/shared/ui/Section";
 import { TagList } from "@/shared/ui/TagList";
 import { TimelineCard } from "@/shared/ui/TimelineCard";
+import Link from "next/link";
 import styles from "./ProjectsSection.module.css";
 
 const resume = getResume();
@@ -33,6 +34,9 @@ export function ProjectsSection() {
                 </li>
               ))}
             </ul>
+            <Link href={`/portfolio/${project.slug}`} className={styles.detailLink}>
+              자세히 보기 →
+            </Link>
           </TimelineCard>
         ))}
       </div>
