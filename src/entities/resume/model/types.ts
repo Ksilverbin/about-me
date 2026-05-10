@@ -51,6 +51,7 @@ export interface Project {
   overview?: string;
   contributions?: Contribution[];
   techDetails?: TechDetail[];
+  website?: string;
 }
 
 export interface Education {

@@ -47,6 +47,34 @@
   color: var(--color-text-muted);
 }
 
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.websiteButton {
+  padding: 0.2rem 1rem;
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.websiteButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+.websiteButton:active {
+  transform: translateY(-1px);
+}
+
 .company {
   font-weight: 600;
   color: var(--color-text-secondary);
@@ -87,15 +115,9 @@
 
 .imagesGrid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin: 1rem 0;
-}
-
-@media (min-width: 640px) {
-  .imagesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  margin: 1.5rem 0;
 }
 
 .gridImageWrapper {

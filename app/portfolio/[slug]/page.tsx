@@ -53,6 +53,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         </header>
 
+        {project.website && (
+          <div className={styles.actions}>
+            <a href={project.website} target="_blank" rel="noopener noreferrer" className={styles.websiteButton}>
+              웹사이트 방문하기 ↗
+            </a>
+          </div>
+        )}
         {project.image && (
           <figure className={styles.imageWrapper}>
             <Image
