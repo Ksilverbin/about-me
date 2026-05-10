@@ -1,9 +1,8 @@
-import { getResume } from "@/entities/resume/model/getResume";
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { BackButton } from "@/shared/ui/BackButton";
-import styles from "./detail.module.css";
+import { getResume } from '@/entities/resume/model/getResume';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { BackButton } from '@/shared/ui/BackButton';
+import styles from './detail.module.css';
 
 // 빌드 시 정적 페이지 생성을 위한 params 제공
 export function generateStaticParams() {
