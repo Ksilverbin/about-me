@@ -71,7 +71,7 @@ export interface Certificate {
 export interface ResumeData extends Profile {
   experiences: Experience[];
   projects: Project[];
-  skills: string[];
+  skills: TechDetail[];
   educations: Education[];
   certificates: Certificate[];
 }

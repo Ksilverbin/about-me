@@ -1,13 +1,19 @@
 import { getResume } from "@/entities/resume/model/getResume";
 import { Section } from "@/shared/ui/Section";
-import { TagList } from "@/shared/ui/TagList";
+import styles from "./SkillsSection.module.css";
 
 const resume = getResume();
 
 export function SkillsSection() {
   return (
     <Section title="Skills">
-      <TagList items={resume.skills} />
+      <ul className={styles.techList}>
+        {resume.skills.map((skill) => (
+          <li key={skill.name} className={styles.techItem}>
+            <strong>{skill.name}</strong>: {skill.description}
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }
