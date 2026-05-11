@@ -12,7 +12,7 @@ export function CertificateSection() {
         {resume.certificates.map((certificate) => (
           <TimelineCard
             key={certificate.id}
-            heading={<strong>{certificate.name}</strong>}
+            heading={<p className={styles.heading}>{certificate.name}</p>}
             meta={`(${certificate.date} ${certificate.organization})`}
           />
         ))}

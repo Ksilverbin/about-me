@@ -8,6 +8,10 @@
   border-left: 1px solid var(--color-border-default);
 }
 
-.card strong {
+.heading {
+  margin: 0;
   color: var(--color-text-primary);
+  font-size: 1.125rem;
+  line-height: 1.556;
+  font-weight: 700;
 }
