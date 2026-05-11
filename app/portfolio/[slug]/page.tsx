@@ -108,12 +108,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       </div>
                     )}
                     <div className={styles.psBlock}>
-                      <div className={styles.problemBlock}>
+                      {item.problem && <div className={styles.problemBlock}>
                         <strong className={styles.psLabel}>문제 상황</strong>
                         <p className={styles.detailDesc}>{item.problem}</p>
-                      </div>
+                      </div>}
                       <div className={styles.solutionBlock}>
-                        <strong className={styles.psLabel}>해결 방안</strong>
+                        {item.problem && <strong className={styles.psLabel}>해결 방안</strong>}
                         <p className={styles.detailDesc}>{item.solution}</p>
                       </div>
                     </div>
