@@ -12,15 +12,15 @@ import type {
   Experience,
   Profile,
   Project,
-  ResumeData
-} from "./types";
+  ResumeData, TechDetail,
+} from './types';
 
 export function getResume(): ResumeData {
   return {
     ...(profileJson as Profile),
     experiences: experiencesJson as Experience[],
     projects: projectsJson as Project[],
-    skills: skillsJson as string[],
+    skills: skillsJson as TechDetail[],
     educations: educationsJson as Education[],
     certificates: certificatesJson as Certificate[]
   };
