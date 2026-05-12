@@ -123,9 +123,8 @@
 .gridImageWrapper {
   border-radius: 12px;
   overflow: hidden;
-  background-color: var(--color-border-muted);
+  background-color: var(--color-bg-primary);
   position: relative;
-  border: 1px solid var(--color-border-muted);
   margin: 0;
 }
 
